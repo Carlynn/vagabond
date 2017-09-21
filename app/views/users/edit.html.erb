@@ -1,0 +1,26 @@
+<h1>Edit Your Profile</h1>
+<%= form_for @user do |f| %>
+<div>
+  <%= f.text_field :first_name %>
+</div>
+<div>
+  <%= f.text_field :last_name %>
+</div>
+<div>
+  <%= f.text_field :city %>
+</div>
+<div>
+  <%= f.text_field :state %>
+</div>
+<div>
+  <%= f.text_field :country %>
+</div>
+<div>
+  <%= f.email_field :email %>
+</div>
+<div>
+  <!-- LATER make this a seperate area -->
+  <%= f.password_field :password%>
+</div>
+<%= f.submit "Save Changes", class: "btn" %>
+<% end %>
