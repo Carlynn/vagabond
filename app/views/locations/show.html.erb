@@ -1,0 +1,12 @@
+<%= @location.city %>
+
+
+<% @locationposts.each do |post| %>
+<ul>
+  <%= post.title %>
+  <%= post.description%>
+  <%= post.user.first_name%>
+
+<%= link_to "Pizza", post_path
+</ul>
+<% end %>

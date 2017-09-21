@@ -1,1 +1,15 @@
-pizza show<!-- <%= @post.title %> -->
+
+
+
+<h3>Title:<%= @post.title %></h3>
+<hr>
+<p>Location:<%= @location.city %></p>
+<hr>
+<p>Author:<%=  @user.first_name %> <%=  @user.last_name %></p>
+<hr>
+<p>Description:<%=  @post.description %></p>
+<br>
+
+
+<%= link_to "Return to edit", edit_post_path(@post), class: "btn btn-default" %>
+<br><br>

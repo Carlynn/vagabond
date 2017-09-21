@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
-WHY DOES LOCATION NOT LOAD AUTOMATICALLY?
-<%= form_for :post, url?: "/users/#{current_user}/posts/#{@post.id}", method: "patch"  do |f| %>
+<!--We removed turbolinks  -->
+<%= form_for @post do |f| %>
 <div>
   <%= f.text_field :title %>
 </div>
@@ -11,4 +11,5 @@ WHY DOES LOCATION NOT LOAD AUTOMATICALLY?
   Location:<%= select(:location, :city, [['San Francisco', 'San Francisco'], ['London', 'London'], ['Gibraltar', 'Gibraltar']]) %>
 </div>
 <%= f.submit "Save Changes", class: "btn" %>
+
 <% end %>

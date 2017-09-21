@@ -33,14 +33,20 @@ class PostsController < ApplicationController
     if post.save
       post.update_attributes(post_params)
       # I THINK THAT THE LOCATION ID SHOULD NOT CHANGE ONCE IT IS CREATED (IT SHOULD BE A NON EDITABLE STATIC FIELD THOUGHTS? AND THEN WE SHOULD NOT UPDATE THE but rather figure out how to undo the push above into the location)
-      @location.update_attribute(:city, location_params)
+      post.update_attribute(:location_id, @location.id)
     end
-    redirect_to user_path(current_user)
+    redirect_to post_path(post)
   end
+    def show
+      @post = Post.find(params[:id])
+      @user = current_user
+      @location = Location.find(params[:id])
+
+    end
 
   private
   def post_params
-    params.require(:post).permit(:title, :description)
+    params.require(:post).permit(:title, :description, :location_id)
   end
 end
 
