@@ -1,0 +1,4 @@
+<h1>VAGABOND</h1>
+<% @locations.each do |location| %>
+<%= link_to "#{location.city}", location_path(location.id) %><br>
+<% end  %>
