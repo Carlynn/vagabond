@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   # show page showing that one single post
   get "/users/:id/posts/:post_id" => "posts#show"
 
-  # show all the locations that a user can select
+  # show all the locations
   get "/locations" => "locations#index"
 
   # show all post for that location
