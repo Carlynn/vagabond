@@ -1,12 +1,17 @@
 <%= @location.city %>
 
-
+<%= link_to "Add Post", new_post_path %>
 <% @locationposts.each do |post| %>
 <ul>
   <%= post.title %>
   <%= post.description%>
   <%= post.user.first_name%>
 
-<%= link_to "Pizza", post_path
+<%= link_to "Show Post", post_path(post.id) %>
+<%= link_to "Edit Post", edit_post_path(post.id) %>
+
+
+<%= button_to 'Delete', {:controller => "posts", :action => 'show', :id => post.id}, data: {:confirm => "Are you sure you want to delete the #{post.title} post?"}, :method => :delete, class: 'btn delete-button' %>
+
 </ul>
 <% end %>

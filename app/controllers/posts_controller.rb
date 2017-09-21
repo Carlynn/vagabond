@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    redirect_to root_path
   end
   def new
     @post = Post.new
@@ -39,7 +39,13 @@ class PostsController < ApplicationController
     def show
       @post = Post.find(params[:id])
       # @location = Location.find(params[:id])
+    end
 
+    def destroy
+      post_id = params[:id]
+      post = Post.find_by_id(post_id)
+      post.destroy
+      redirect_to root_path
     end
 
   private

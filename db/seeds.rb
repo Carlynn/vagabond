@@ -16,6 +16,7 @@ Location.delete_all
     city: "San Francisco",
     state: "CA",
     country: "USA",
+    image: "http://www.thecartoonist.me/files/img/square-profile.jpg",
     email: "csparks@unkown.com",
     password: "pizza",
   },
@@ -25,6 +26,7 @@ Location.delete_all
     city: "San Francisco",
     state: "CA",
     country: "USA",
+    image: "https://st2.depositphotos.com/1448232/8007/v/950/depositphotos_80074992-stock-illustration-blonde-profile-two.jpg",
     email: "asparks@unkown.com",
     password: "pizza",
   },
@@ -34,6 +36,7 @@ Location.delete_all
     city: "San Francisco",
     state: "CA",
     country: "USA",
+    image: "https://i.pinimg.com/236x/10/09/0e/10090ecda6b6729044f1541cb17cb741--pretty-drawings-girl-drawings.jpg",
     email: "jsparks@unkown.com",
     password: "pizza",
   }]
