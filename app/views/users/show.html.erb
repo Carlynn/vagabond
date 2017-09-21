@@ -11,6 +11,6 @@ Desc: <%= post.description %> <br>
 Address of Post: <%= post.location.address %> <br>
 City of Post: <%= post.location.city %> <br>
 Time of Post: <%= post.created_at %> <br>
-<%= link_to "Edit Post", edit_post_path(current_user, post.id), class: "btn" %> <br>
+<%= link_to "Edit Post", edit_post_path(post.id), class: "btn" %> <br>
 <hr>
 <% end %>

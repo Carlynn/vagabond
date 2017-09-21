@@ -19,13 +19,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    user = User.find(params[:id])
-    @post = user.posts.find_by_id(params[:post_id])
+    @post = Post.find_by_id(params[:id])
   end
 
   def update
     user_id = current_user
-    post = Post.find_by_id(params[:post_id])
+    post = Post.find_by_id(params[:id])
     location_params = params[:location][:city]
     @location = Location.find_by(city: location_params)
     post.update_attributes(post_params)
@@ -39,14 +38,13 @@ class PostsController < ApplicationController
   end
     def show
       @post = Post.find(params[:id])
-      @user = current_user
-      @location = Location.find(params[:id])
+      # @location = Location.find(params[:id])
 
     end
 
   private
   def post_params
-    params.require(:post).permit(:title, :description, :location_id)
+    params.require(:post).permit(:title, :description, :id)
   end
 end
 

@@ -1,6 +1,6 @@
 <h1>Create a post</h1>
 WHY DO I NEED url?
-<%= form_for :post, url?: "/users/#{current_user}/posts", method: "post" do |f| %>
+<%= form_for @post do |f| %>
 <div>
   Title: <%= f.text_field :title %>
 </div>

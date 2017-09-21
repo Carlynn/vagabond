@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
 <!--We removed turbolinks  -->
-<%= form_for @post do |f| %>
+<%= form_for @post, method: "patch" do |f| %>
 <div>
   <%= f.text_field :title %>
 </div>
