@@ -16,3 +16,8 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
+
+$(document).ready(function() {
+    $('select').material_select();
+
+});

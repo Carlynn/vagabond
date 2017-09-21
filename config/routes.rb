@@ -13,20 +13,20 @@ Rails.application.routes.draw do
 
   # route to open a new form for a post
   # get "/users/:id/new" => "posts#new"
-  get "/users/:id/posts/new" => "posts#new"
+  get "/users/:id/posts" => "posts#new"
 
   # create a new post for that user id (upon submission of post)
   # post "/users/:id" => "posts#create"
-  post "/users/:id/posts/:post_id" => "posts#create"
+  post "/users/:id/posts" => "posts#create"
 
   # show all posts on the profile page - have above "get "/users/:id" => "user#show"
 
   # from the profile page - ability to edit ONE post
   # get "/users/:id/:post_id/edit" => "posts#edit"
-  get "/users/:id/posts/:post_id/edit" => "posts#edit"
+  get "/users/:id/posts/:post_id/edit" => "posts#edit", as: "edit_post"
 
-  # updating post upon edit
-  patch "/users/:id/posts/:post_id/" => "posts#update"
+  # updating post upon edit (not sure why rails wants an edit but it wants it)
+  patch "/users/:id/posts/:post_id/edit" => "posts#update"
 
   # show page showing that one single post
   get "/users/:id/posts/:post_id" => "posts#show"

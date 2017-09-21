@@ -2,3 +2,15 @@
 <%= @user.city %><br>
 <%= @user.created_at %><br>
 <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>
+
+<h4>THIS IS POSTS</h4>
+<hr>
+<% @posts.each do |post| %>
+Title: <%= post.title %> <br>
+Desc: <%= post.description %> <br>
+Address of Post: <%= post.location.address %> <br>
+City of Post: <%= post.location.city %> <br>
+Time of Post: <%= post.created_at %> <br>
+<%= link_to "Edit Post", edit_post_path(current_user, post.id), class: "btn" %> <br>
+<hr>
+<% end %>

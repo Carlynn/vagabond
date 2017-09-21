@@ -8,6 +8,7 @@
 
 Post.delete_all
 User.delete_all
+Location.delete_all
 
   create_user = [{
     first_name: "Chanel",
@@ -38,14 +39,50 @@ User.delete_all
   }]
   User.create(create_user)
 
-  create_post = [{
-    title: "San Fran is fun",
-    description: "They have the best bacon pizza"
-  },{
-    title: "San Fran is cool",
-    description: "It is cold"
-  },{
-    title: "San Fran is expensive",
-    description: "The bacon pizza is over priced"
-  }]
-  Post.create(create_post)
+  create_location = [{
+    address: "225 Bush Street",
+    city: "San Francisco",
+    state: "CA",
+    postal_code: "94102",
+    country: "USA"
+  },
+  {
+    address: "Westminster",
+    city: "London",
+    state: "UK",
+    postal_code: "SW1A 0AA",
+    country: "UK"
+  },
+  {
+    address: "5 Moorish Castle Estate",
+    city: "Gibraltar",
+    state: "Gibraltar",
+    postal_code: " GX11 1AA",
+    country: "Spain"
+    }
+  ]
+  Location.create(create_location)
+
+  # create_post = [{
+  #   title: "San Fran is fun",
+  #   description: "They have the best bacon pizza"
+  # },{
+  #   title: "San Fran is cool",
+  #   description: "It is cold"
+  # },{
+  #   title: "San Fran is expensive",
+  #   description: "The bacon pizza is over priced"
+  # }]
+  # Post.create(create_post)
+
+
+
+
+# Push the post into the first user
+# User.first.posts<<Post.first
+
+# Push the post into the location to sure both parts are filled in
+# Location.first.posts <<Post.first
+
+# Ability to get the location for a user but not sure if its applicable
+# User.first.locations<<Location.first

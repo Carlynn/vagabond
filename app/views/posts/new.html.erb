@@ -1,0 +1,14 @@
+<h1>Create a post</h1>
+WHY DO I NEED url?
+<%= form_for :post, url?: "/users/#{current_user}/posts", method: "post" do |f| %>
+<div>
+  Title: <%= f.text_field :title %>
+</div>
+<div>
+  Description: <%= f.text_field :description %>
+</div>
+<div>
+  Location:city:<%= select(:location, :city, [['San Francisco', 'San Francisco'], ['London', 'London'], ['Gibraltar', 'Gibraltar']]) %>
+</div>
+<%= f.submit "Create Post", class: "btn" %>
+<% end %>
