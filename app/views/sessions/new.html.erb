@@ -1,1 +1,9 @@
-pizza
+<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+<div>
+  <%= f.email_field :email, placeholder: "email"%>
+</div>
+<div>
+  <%= f.password_field :password, placeholder: "password"%>
+</div>
+<%= f.submit "Log In"%>
+<% end %>

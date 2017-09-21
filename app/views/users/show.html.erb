@@ -1,0 +1,4 @@
+<%= @user.first_name %> <%= @user.last_name %><br>
+<%= @user.city %><br>
+<%= @user.created_at %><br>
+<%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>

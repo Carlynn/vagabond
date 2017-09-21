@@ -1,0 +1,25 @@
+<h1>Create an account</h1>
+<%= form_for @user do |f| %>
+<div>
+  First Name: <%= f.text_field :first_name %>
+</div>
+<div>
+  Last Name: <%= f.text_field :last_name %>
+</div>
+<div>
+  City: <%= f.text_field :city %>
+</div>
+<div>
+  State: <%= f.text_field :state %>
+</div>
+<div>
+  Country: <%= f.text_field :country %>
+</div>
+<div>
+  Email: <%= f.email_field :email %>
+</div>
+<div>
+  Password: <%= f.password_field :password%>
+</div>
+<%= f.submit "Create Account", class: "btn" %>
+<% end %>

@@ -15,10 +15,14 @@
           <a href="#!" class="brand-logo">Logo</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
+            <li><%=link_to "Home", root_path %></li>
+            <% if current_user %>
+            <li><%=link_to "Profile", user_path(current_user) %></li>
+            <li><%=link_to "Log Out", logout_path %></li>
+            <% else %>
+            <li><%=link_to "Sign Up", new_user_path %></li>
             <li><%=link_to "Login", login_path %></li>
+            <% end %>
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><a href="sass.html">Sass</a></li>
@@ -29,6 +33,11 @@
         </div>
       </nav>
       <!-- navbar end -->
+      <% flash.each do |name, msg| %>
+      <p>
+        <small> <%= name.capitalize %>: <%= msg %> </small>
+      </p>
+      <% end %>
     <%= yield %>
   </body>
 </html>
