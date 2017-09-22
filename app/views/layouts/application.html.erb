@@ -17,16 +17,15 @@
 
      <nav style="background-color: white; top: 0">
         <div class="nav-wrapper">
-          <img class="brand-logo" src="assets/flatline.png" style="height: 100%; left: 10px;">
-            <img class="brand-logo" src="assets/airplane_01.png" style="height: 60%; left: 70px; top: 15px">
+          <img class="brand-logo" src="<%= asset_path("logo_travel_with_us.png") %>" style="height: 100%">
             <!-- begin header -->
-            <div class="brand-logo valign-wrapper" style="left: 38%">
+            <div class="brand-logo valign-wrapper hide-on-med-and-down" style="left: 38%">
               <!-- <div style="position: relative"> -->
               <h4 style="display: inline; color: black; left: 50%">TRAVEL</h4><h1 class="title" style="display: inline; color: black;">with</h1><h4 style="display: inline; color: black;">US</h4>
             <!-- </div> -->
             </div>
             <!-- end header -->
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons" style="color: black">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><%=link_to "HOME", root_path %></li>
             <% if current_user %>
