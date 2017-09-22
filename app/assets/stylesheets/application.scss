@@ -17,3 +17,31 @@
 @import "materialize/components/color";
 @import "materialize";
 @import "materialize/extras/nouislider";
+
+.modal-content{
+  color: black
+}
+
+.flashmessage {
+  border-style: solid;
+  border-color: black;
+  background-color: rgba(255, 0, 0, 0.2);
+  font-size: 120%;
+  text-align: center;
+  margin-top: 2%;
+  padding: 2%
+}
+// #toast-container{
+//   top: auto !important;
+//   right: auto !important;
+//   top: 10%;
+//   left: 35%;
+// }
+
+#sign_in_form{
+  padding: 0px;
+  margin-top: -10%;
+}
+.sign_in_div{
+  padding: 0px;
+}
