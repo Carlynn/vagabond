@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :require_login, except: [:new, :create, :user_params, :show]
+  before_action :check_owner, only: [:edit, :update]
+
   def index
     redirect_to root_path
   end
@@ -33,5 +36,12 @@ class UsersController < ApplicationController
   end
   def user_update_params
     params.require(:user).permit(:first_name, :last_name, :city, :state, :country, :email, :image)
+  end
+  def check_owner
+  # both are the same thing current_user.id == params[:id] and session[:id] === params[:id] => only if these are true then it allows the method to work for that SPECIFIC PARAMETER IN THE URL
+  # if the person that is logged is not the same as the persons data we are looking at ... flash a message or redirect_to their own page
+    if session[:user_id].to_s != params[:id].to_s
+      redirect_to user_path(current_user)
+    end
   end
 end

@@ -8,7 +8,13 @@
   <%= f.text_field :description %>
 </div>
 <div>
-  Location:<%= select(:location, :city, [['San Francisco', 'San Francisco'], ['London', 'London'], ['Gibraltar', 'Gibraltar']]) %>
+  <% if @post.location.city.to_s == "St. Petersburg" %>
+  Location:city:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
+  <% elsif @post.location.city.to_s == "London" %>
+  Location:city:<%= select(:location, :city, [['London', 'London'], ['St. Petersburg', 'St. Petersburg'], ['Barcelona', 'Barcelona']]) %>
+  <% else %>
+  Location:city:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['London', 'London'], ['St. Petersburg', 'St. Petersburg']]) %>
+  <% end %>
 </div>
 <%= f.submit "Save Changes", class: "btn" %>
 

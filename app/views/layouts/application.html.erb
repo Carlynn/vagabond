@@ -2,11 +2,13 @@
 <html>
   <head>
     <title>Vegabond</title>
-    <%= csrf_meta_tags %>
+    <!-- Compiled and minified CSS -->
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
   </head>
 
   <body>
@@ -29,28 +31,62 @@
             <li><%=link_to "PROFILE", user_path(current_user) %></li>
             <li><%=link_to "LOG OUT", logout_path %></li>
             <% else %>
-            <li><%=link_to "SIGN UP", new_user_path %></li>
-            <li><%=link_to "LOGIN", login_path %></li>
+            <li>
+              <!-- Modal Trigger -->
+              <%=link_to "Sign-up", href="#sign-up", class:"modal-trigger"%>
+                <%= form_for (User.new), url:users_path, method: "post" do |f| %>
+                  <div id="sign-up" class="modal">
+                    <div class="modal-content">
+                      
+                        <%= render partial: "layouts/user_forms", locals: { f: f } %>
+                    </div>
+                  <div class="modal-footer">
+                <%= f.submit "Create Account", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+              <% end %>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Modal for login -->
+              <li>
+                <%=link_to "Log-in", href="#sign-in-modal", class:"modal-trigger"%>
+                <%= form_for :user, url: "/sessions", method: "post" do |f| %>
+                  <div id="sign-in-modal" class="modal">
+                    <div class="modal-content">
+                      <%= render partial: "layouts/sign_in", locals: { f: f } %>
+                    </div>
+                    <div class="modal-footer">
+                  <%= f.submit "Log In", class: "modal-action modal-close waves-effect waves-green btn-flat", id: "sign-in-button" %>
+                <% end %>
+                  </div>
+                </div>
+              </l1>
+
+
             <% end %>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-            <li><%=link_to "HOME", root_path %></li>
             <% if current_user %>
-            <li><%=link_to "PROFILE", user_path(current_user) %></li>
-            <li><%=link_to "LOG OUT", logout_path %></li>
+              <li><%=link_to "Profile", user_path(current_user) %></li>
+              <li><%=link_to "Log Out", logout_path %></li>
             <% else %>
-            <li><%=link_to "SIGN UP", new_user_path %></li>
-            <li><%=link_to "LOGIN", login_path %></li>
+              <li><%=link_to "Sign Up", new_user_path %></li>
+              <li><%=link_to "Login", login_path %></li>
             <% end %>
           </ul>
         </div>
       </nav>
       <!-- navbar end -->
-      <% flash.each do |name, msg| %>
-      <p>
-        <small> <%= name.capitalize %>: <%= msg %> </small>
-      </p>
-      <% end %>
-    <%= yield %>
+      <!-- <div class="row"> -->
+        <div class="col s8 push-s2">
+          <% flash.each do |name, msg| %>
+           <div id='toast-container'>
+             <%= javascript_tag "Materialize.toast('#{msg}', 4000)" %>
+           </div>
+           <!-- <div class="flashmessage <%= name.capitalize %>"> <%= msg %></div> -->
+          <% end %>
+        </div>
+      <!-- </div> -->
+      <%= yield %>
   </body>
 </html>

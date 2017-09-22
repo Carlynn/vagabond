@@ -11,5 +11,9 @@
 <br>
 
 
-<%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-default" %>
 <br><br>
+
+<% if session[:user_id].nil? || session[:user_id] != @post.user.id %>
+<% else %>
+  <%= link_to "Edit Post", edit_post_path(@post.id), class: "btn btn-default" %>
+<% end %>
