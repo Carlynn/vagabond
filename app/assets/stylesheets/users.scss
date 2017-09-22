@@ -12,7 +12,6 @@
   background-position: top;
   background-image: url('https://i.pinimg.com/736x/f2/10/17/f21017283bcd524470390bcd6ed82ecc--denim-on-denim-denim-vests.jpg');
   -webkit-background-size: cover;
-  height: 100vh;
 }
 .circle {
   background-color: white;
@@ -20,7 +19,7 @@
 }
 .prof-image {
   position: absolute;
-  top: 350px;
+  top: 50vh;
   left: 18%;
   z-index: 1;
 }
