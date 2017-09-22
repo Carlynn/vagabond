@@ -17,3 +17,20 @@
 @import "materialize/components/color";
 @import "materialize";
 @import "materialize/extras/nouislider";
+
+body{
+  font-family: avenir;
+  color: black;
+}
+nav {
+  background-color: white;
+  box-shadow: none;
+}
+nav ul a {
+  color: black
+}
+.title {
+  font-family: "Times New Roman", Georgia, Serif;
+  font-weight: bold;
+  font-style: italic;
+}
