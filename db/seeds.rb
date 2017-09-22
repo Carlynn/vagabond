@@ -50,7 +50,7 @@ location1 = Location.create({
   postal_code: "08013",
   country: "Spain",
   icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "assets/barcelona_01.jpg",
+  background_image: "barcelona_01.jpg",
   description: "Fall in love with Barcelona, where food, friends, family and fun rule all. Whether you're looking to follow royal footsteps in Madrid, lose yourself in Barcelona's sea breeze, or tame the brave bull in mythical Andalucía, adventure awaits around every corner.",
   })
 
@@ -61,7 +61,7 @@ location2 = Location.create({
   postal_code: "SW1A 0AA",
   country: "UK",
   icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "assets/london_01.jpg",
+  background_image: "london_01.jpg",
   description: "A tireless innovator of art and culture, London is a city of ideas and the imagination. This city is a constant discovery: new restaurants and bars, outstanding museum extensions or refurbishments (and yet many remain free), once-derelict but now trendy neighbourhoods, and four distinct seasons that each bring unique pleasures.",
   })
 
@@ -72,7 +72,7 @@ location3 = Location.create({
   postal_code: "194358",
   country: "Russia",
   icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "assets/st_petersburg_01.jpg",
+  background_image: "st_petersburg_01.jpg",
   description: "Little of importance has changed in St Petersburg since I first visited in 1994. It remains a city of majestic architecture, high artistic culture and historical significance. I will never tire of exploring the amazing art collections of the Hermitage and the Russian Museum nor be bored by the grand facades and the reflections of palaces in the canals.",
 })
 
@@ -83,7 +83,7 @@ location4 = Location.create({
   postal_code: "75007",
   country: "France",
   icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "assets/Europe_01.jpg",
+  background_image: "Europe_01.jpg",
   description: "Paris is one of the most beautiful cities on earth, a truth easily appreciated on a stroll that could yield one stunning vista after another, from the epic Eiffel Tower to the regal Jardin des Tuileries to the petite cafés bursting onto the sidewalks. Beyond the city’s visual appeal, the cultural riches of the French capital are unsurpassed. Whether you opt to explore the historic, fashion-conscious, bourgeois, or bohemian and arty sides of Paris, one thing is certain: the City of Light will always enthrall.",
   })
 
