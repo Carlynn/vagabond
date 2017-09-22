@@ -13,7 +13,8 @@
 
   <body>
     <!-- navbar begin -->
-    <nav style="position: fixed; background-color: white; z-index:1; top: 0">
+    <div class="navbar-fixed">
+     <nav>
         <div class="nav-wrapper">
           <img class="brand-logo" src="assets/flatline.png" style="height: 100%; left: 10px;">
             <img class="brand-logo" src="assets/airplane_01.png" style="height: 60%; left: 70px; top: 15px">
@@ -33,11 +34,11 @@
             <% else %>
             <li>
               <!-- Modal Trigger -->
-              <%=link_to "Sign-up", href="#sign-up", class:"modal-trigger"%>
+              <%=link_to "SIGN UP", href="#sign-up", class:"modal-trigger"%>
                 <%= form_for (User.new), url:users_path, method: "post" do |f| %>
                   <div id="sign-up" class="modal">
                     <div class="modal-content">
-                      
+
                         <%= render partial: "layouts/user_forms", locals: { f: f } %>
                     </div>
                   <div class="modal-footer">
@@ -49,14 +50,14 @@
 
               <!-- Modal for login -->
               <li>
-                <%=link_to "Log-in", href="#sign-in-modal", class:"modal-trigger"%>
+                <%=link_to "LOG IN", href="#sign-in-modal", class:"modal-trigger"%>
                 <%= form_for :user, url: "/sessions", method: "post" do |f| %>
                   <div id="sign-in-modal" class="modal">
                     <div class="modal-content">
                       <%= render partial: "layouts/sign_in", locals: { f: f } %>
                     </div>
                     <div class="modal-footer">
-                  <%= f.submit "Log In", class: "modal-action modal-close waves-effect waves-green btn-flat", id: "sign-in-button" %>
+                  <%= f.submit "LOG IN", class: "modal-action modal-close waves-effect waves-green btn-flat", id: "sign-in-button" %>
                 <% end %>
                   </div>
                 </div>
@@ -66,16 +67,18 @@
             <% end %>
           </ul>
           <ul class="side-nav" id="mobile-demo">
+              <li><%=link_to "HOME", root_path %></li>
             <% if current_user %>
-              <li><%=link_to "Profile", user_path(current_user) %></li>
-              <li><%=link_to "Log Out", logout_path %></li>
+              <li><%=link_to "PROFILE", user_path(current_user) %></li>
+              <li><%=link_to "LOG OUT", logout_path %></li>
             <% else %>
-              <li><%=link_to "Sign Up", new_user_path %></li>
-              <li><%=link_to "Login", login_path %></li>
+              <li><%=link_to "SIGN UP", new_user_path %></li>
+              <li><%=link_to "LOGIN", login_path %></li>
             <% end %>
           </ul>
         </div>
       </nav>
+    </div>
       <!-- navbar end -->
       <!-- <div class="row"> -->
         <div class="col s8 push-s2">
