@@ -1,3 +1,25 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  text-align: center;
+  padding: 0 120px;
+  margin-bottom: 40px;
+}
+.card {
+  background-image: no-repeat;
+  background-size: 100% 100%;
+}
+.card .card-content {
+  height: 500px;
+}
+.card-content {
+  text-align: center;
+}
+
+.btn-card {
+  color: white;
+  border: white solid 1px;
+  padding: 10px;
+}

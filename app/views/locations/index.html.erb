@@ -1,6 +1,38 @@
-<div class="jumbotron" id="tagline" style="border: black solid 2px; height: 400px">
-   <h1>HEADER JUMBO</h1>
-   </div>
+<div class="content" style="position: relative; top: 100px">
+  <div class="header">
+    <p>Traveling abroad in Europe? Take a tour and discover what there is to offer from travelers just like yourself. Here you will have the ability to see Europe as they saw it through their eyes. Take a peak at all the reviews and enjoy. We can't wait to hear from you next!</p>
+  </div>
+<!-- BEGIN locations -->
+<div class="container-fluid">
+  <div class="row valign" style="vertical-align:top">
+        <div class="col m12 l6">
+            <div class="card" style="background-image: url('assets/barcelona_01.jpg'); border-radius: 0">
+              <div class="card-content white-text">
+                <span class="title"><h3>Barcelona</h3></span><br>
+                <p>Fall in love with Barcelona, where food, friends, family and fun rule all. Whether you're looking to follow royal footsteps in Madrid, lose yourself in Barcelona's sea breeze, or tame the brave bull in mythical Andalucía, adventure awaits around every corner.</p><br><br>
+                <img src="http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg" style="width:100px"><br><br><br>
+
+                <%= link_to "DISCOVER BARCELONA", root_path, class: "btn-card" %>
+              </div>
+            </div>
+        </div>
+<!-- END locations -->
+<!-- BEGIN locations -->
+        <div class="col s12 m6">
+            <div class="card" style="background-image: url('assets/london_04.jpg'); border-radius: 0">
+              <div class="card-content white-text">
+                <span class="title"><h3>London</h3></span><br>
+                <p>A tireless innovator of art and culture, London is a city of ideas and the imagination. This city is a constant discovery: new restaurants and bars, outstanding museum extensions or refurbishments (and yet many remain free), once-derelict but now trendy neighbourhoods, and four distinct seasons that each bring unique pleasures. </p><br>
+                <img src="http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg" style="width:100px"><br><br><br>
+
+                <%= link_to "DISCOVER LONDON", root_path, class: "btn-card" %>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- END locations -->
 <% @locations.each do |location| %>
 <%= link_to "#{location.city}", location_path(location.id) %><br>
 <% end  %>
