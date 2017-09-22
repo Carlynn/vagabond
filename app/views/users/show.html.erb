@@ -2,7 +2,12 @@
 <%= @user.city %><br>
 <%= @user.created_at %><br>
 <%= image_tag(@user.image) %>
-<%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>
+
+<% if session[:user_id].nil? || session[:user_id] != @user.id %>
+<% else %>
+  <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>
+<% end %>
+
 
 <h4>THIS IS POSTS</h4>
 <hr>
@@ -12,6 +17,11 @@ Desc: <%= post.description %> <br>
 Address of Post: <%= post.location.address %> <br>
 City of Post: <%= link_to "#{post.location.city}", location_path(post.location.id) %> <br>
 Time of Post: <%= post.created_at %> <br>
-<%= link_to "Edit Post", edit_post_path(post.id), class: "btn" %> <br>
+
+<% if session[:user_id].nil? || session[:user_id] != @user.id %>
+<% else %>
+  <%= link_to "Edit Post", edit_post_path(post.id), class: "btn" %>
+<% end %>
+<br>
 <hr>
 <% end %>

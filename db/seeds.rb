@@ -43,11 +43,11 @@ Location.delete_all
   User.create(create_user)
 
   create_location = [{
-    address: "225 Bush Street",
-    city: "San Francisco",
+    address: "Carrer de Mallorca",
+    city: "Barcelona",
     state: "CA",
-    postal_code: "94102",
-    country: "USA"
+    postal_code: "08013",
+    country: "Spain"
   },
   {
     address: "Westminster",
@@ -57,11 +57,11 @@ Location.delete_all
     country: "UK"
   },
   {
-    address: "5 Moorish Castle Estate",
-    city: "Gibraltar",
-    state: "Gibraltar",
-    postal_code: " GX11 1AA",
-    country: "Spain"
+    address: "154 Engelsa Prospekt",
+    city: "St. Petersburg",
+    state: " St. Petersburg ",
+    postal_code: " 194358",
+    country: "Russia"
     }
   ]
   Location.create(create_location)

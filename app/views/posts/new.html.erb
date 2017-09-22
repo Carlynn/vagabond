@@ -8,7 +8,13 @@ WHY DO I NEED url?
   Description: <%= f.text_field :description %>
 </div>
 <div>
-  Location:city:<%= select(:location, :city, [['San Francisco', 'San Francisco'], ['London', 'London'], ['Gibraltar', 'Gibraltar']]) %>
+  <% if params[:location_id] == "St. Petersburg" %>
+  Location:city:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
+  <% elsif params[:location_id] == "London" %>
+  Location:city:<%= select(:location, :city, [['London', 'London'], ['St. Petersburg', 'St. Petersburg'], ['Barcelona', 'Barcelona']]) %>
+  <% else %>
+  Location:city:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['London', 'London'], ['St. Petersburg', 'St. Petersburg']]) %>
+  <% end %>
 </div>
 <%= f.submit "Create Post", class: "btn" %>
 <% end %>
