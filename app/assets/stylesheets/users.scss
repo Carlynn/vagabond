@@ -4,14 +4,14 @@
 
 .wht-cont {
   background-color: white;
+  margin-top: 70vh;
 }
-
 #bg {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top;
-  background-image: url('https://i.pinimg.com/736x/f2/10/17/f21017283bcd524470390bcd6ed82ecc--denim-on-denim-denim-vests.jpg');
   -webkit-background-size: cover;
+  width: 100vw;
 }
 .circle {
   background-color: white;
@@ -19,12 +19,9 @@
 }
 .prof-image {
   position: absolute;
-  top: 50vh;
-  left: 18%;
+  margin-top: 60vh;
+  left: 16%;
   z-index: 1;
-}
-.prof-title {
-  color: #282828;
 }
 .prof-description {
   padding-top: 40px;
@@ -33,5 +30,14 @@
   text-align: center;
 }
 .post-image {
+  width: 100%;
+}
+.btn {
+  background-color: #282828 !important;
+  color: white !important;
+}
+.btn-posts {
+  background-color: #282828 !important;
+  color: white !important;
   width: 100%;
 }
