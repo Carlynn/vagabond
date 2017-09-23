@@ -20,7 +20,7 @@
           <!-- BEGIN profile buttons -->
           <% if session[:user_id].nil? || session[:user_id] != @user.id %>
           <% else %>
-            <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>
+            <%= link_to "Edit Profile", edit_user_path(@user.slug), class: "btn" %>
           <% end %>
           <div class="post-content">
             <h4 class="prof-title post-title"><b>POSTS</b></h4>
