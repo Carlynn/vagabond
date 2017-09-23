@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
 
   resources :posts
-  resources :locations
+  resources :locations, param: :slug
 
  end
