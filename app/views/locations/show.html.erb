@@ -1,45 +1,42 @@
-
-      <div class="parallax"><img src="https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg"></div>
-  
-
 <div class="parallax-container">
-    <div class="parallax"><img src="https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg"></div>
+    <div class="parallax">
+      <%= image_tag(@locationposts.sample.image) %>
+      </div>
   </div>
   <div class="section white">
     <div class="row container">
-      <h2 class="header">Parallax</h2>
-      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+      <h2 class="header title"><%= @location.city %></h2>
+      <!-- BEGIN POST data -->
+      <% if session[:user_id].nil?  %>
+      <% else %>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large black">
+              <i class="large material-icons">add</i>
+            </a>
+              <%= link_to " ", new_post_path({:location_id => @location.city})%>
+          </div>
+      <% end %>
+      <% @locationposts.each do |post| %>
+        <ul>
+          <span><b style="display: inline">Title: </b><p class="post-title-color" style="display: inline"><%= post.title%></p><br></span>
+          <b>Author: </b><%= link_to "#{post.user.first_name} #{post.user.last_name}", user_path(post.user.slug) %><br>
+          <b>Description: </b><%= post.description.slice(0, 210)+"..." %>
+          <% if session[:user_id].nil? || session[:user_id] != post.user.id %>
+          <%= link_to "Read More", post_path(post.id) %>
+          <hr>
+          <% else %>
+            <%= link_to "Show Post", post_path(post.id) %>
+            <%= link_to "Edit Post", edit_post_path(post.id) %>
+            <%= button_to 'Delete', {:controller => "posts", :action => 'show', :id => post.id}, data: {:confirm => "Are you sure you want to delete the #{post.title} post?"}, :method => :delete, class: 'btn delete-button' %>
+            <hr>
+          <% end %>
+        </ul>
+      <% end %>
+      <!-- END POST data -->
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img src="https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg"></div>
+    <div class="parallax">
+      <%= image_tag(@locationposts.sample.image) %>
+    </div>
   </div>
-
-
-
-<!-- <img class="jumbotron responsive-img" style="margin-bottom: 20px" src="https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg"> -->
-
-
-
-<%= @location.city %>
-
-<% if session[:user_id].nil?  %>
-
-<% else %>
-  <%= link_to "Add Post", new_post_path({:location_id => @location.city})%>
-<% end %>
-
-<% @locationposts.each do |post| %>
-  <ul>
-    <%= post.title %>
-    <%= post.description%>
-    <%= post.user.first_name%>
-    <% if session[:user_id].nil? || session[:user_id] != post.user.id %>
-    <%= link_to "Show Post", post_path(post.id) %>
-    <% else %>
-      <%= link_to "Show Post", post_path(post.id) %>
-      <%= link_to "Edit Post", edit_post_path(post.id) %>
-      <%= button_to 'Delete', {:controller => "posts", :action => 'show', :id => post.id}, data: {:confirm => "Are you sure you want to delete the #{post.title} post?"}, :method => :delete, class: 'btn delete-button' %>
-    <% end %>
-  </ul>
-<% end %>
