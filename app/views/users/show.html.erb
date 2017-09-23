@@ -1,4 +1,4 @@
-<div id="bg" class="container-fluid" style="background-image: url('<%= @user.image %>');">
+<div id="bg" class="container-fluid" style="background-image: url('<%= @user.posts.sample.image %>');">
   <!-- BEGIN Profile image and description -->
   <!-- BEGIN Profile IMAGE -->
   <div class="row prof-image">
@@ -7,13 +7,13 @@
   <!-- END Profile IMAGE -->
   <!-- BEG COTNAINER FOR CONTENT -->
     <div class="container">
-    <div class="row">
+    <div class="row" style="margin-bottom: 0px">
       <div class="col s12 wht-cont z-depth-5">
           <!-- BEGIN PROFILE INFO -->
           <div class="prof-description">
             <h4><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h4>
             <p><b>location: </b><%= @user.city %><br>
-            <b>Date Joined: </b><%= @user.created_at %></p>
+            <b>Date Joined: </b><%= @user.created_at.strftime("%B").to_s + " " + @user.created_at.year.to_s %></p>
           </div>
           <!-- END PROFILE INFO -->
           <!-- BEGIN profile buttons -->
@@ -36,21 +36,28 @@
                     <% if session[:user_id].nil? || session[:user_id] != @user.id %>
                     <% else %>
                       <%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-posts" %>
+                    <% end %>
+                    </div>
+                    <!-- END IMAGE FOR POST -->
+                    <!-- BEGIN POST CONTENT -->
+                    <div class="col s12 m9">
+                      <b>Title: </b><%= post.title %> <br>
+                      <b>Address: </b><%= post.location.address %> <br>
+                      <b>City: </b><%= link_to "#{post.location.city}", location_path(post.location.id) %> <br>
+                      <b>Posted at: </b><%= post.created_at %> <br>
+                      <b>Experience: </b><%= post.description %> <br>
+                    </div>
+                    <!-- END POST CONTENT -->
                   </div>
-                  <!-- END IMAGE FOR POST -->
-                  <!-- BEGIN POST CONTENT -->
-                  <div class="col s12 m9">
-                    <b>Title: </b><%= post.title %> <br>
-                    <b>Address: </b><%= post.location.address %> <br>
-                    <b>City: </b><%= link_to "#{post.location.city}", location_path(post.location.id) %> <br>
-                    <b>Posted at: </b><%= post.created_at %> <br>
-                    <b>Experience: </b><%= post.description %> <br>
-                  </div>
-                  <!-- END POST CONTENT -->
-                </div>
                 <hr>
-                <% end %>
               <% end %>
           <!-- END POST DATA -->
+
+          <div class="fixed-action-btn">
+            <a class="btn-floating btn-large grey">
+              <i class="large material-icons">mode_edit</i>
+            </a>
+              <%= link_to " "%>
+          </div>
       </div>
     </div>
