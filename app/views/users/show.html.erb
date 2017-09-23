@@ -1,27 +1,57 @@
-<%= @user.first_name %> <%= @user.last_name %><br>
-<%= @user.city %><br>
-<%= @user.created_at %><br>
-<%= image_tag(@user.image) %>
 
-<% if session[:user_id].nil? || session[:user_id] != @user.id %>
-<% else %>
-  <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>
-<% end %>
-
-
-<h4>THIS IS POSTS</h4>
-<hr>
-<% @posts.each do |post| %>
-Title: <%= post.title %> <br>
-Desc: <%= post.description %> <br>
-Address of Post: <%= post.location.address %> <br>
-City of Post: <%= link_to "#{post.location.city}", location_path(post.location.id) %> <br>
-Time of Post: <%= post.created_at %> <br>
-
-<% if session[:user_id].nil? || session[:user_id] != @user.id %>
-<% else %>
-  <%= link_to "Edit Post", edit_post_path(post.id), class: "btn" %>
-<% end %>
-<br>
-<hr>
-<% end %>
+<div id="bg" class="container-fluid prof-content">
+  <!-- BEGIN Profile image and description -->
+  <!-- BEGIN Profile IMAGE -->
+  <div class="row prof-image">
+      <%= image_tag(@user.image, class: "circle") %>
+  </div>
+  <!-- END Profile IMAGE -->
+  <!-- BEG COTNAINER FOR CONTENT -->
+    <div class="container-fluid" style="width: 65%; margin: auto">
+    <div class="row">
+      <div class="col s8 offset-s2 wht-cont z-depth-5" style="margin-top: 50vh">
+          <!-- BEGIN PROFILE INFO -->
+          <div class="prof-description">
+            <h4 class="prof-title"><b><%= @user.first_name %> <%= @user.last_name %></b></h4>
+            <p><b>location: </b><%= @user.city %><br>
+            <b>Date Joined: </b><%= @user.created_at %></p>
+          </div>
+          <!-- END PROFILE INFO -->
+          <!-- BEGIN profile buttons -->
+          <% if session[:user_id].nil? || session[:user_id] != @user.id %>
+          <% else %>
+            <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn" %>
+          <% end %>
+          <div class="post-content">
+            <h4 class="prof-title post-title"><b>POSTS</b></h4>
+          </div>
+          <hr>
+          <!-- END profile buttons -->
+          <!-- BEGIN POST DATA -->
+              <% @posts.each do |post| %>
+                <div class="row">
+                  <!-- BEGIN IMAGE FOR POST -->
+                  <br>
+                  <div class="col s3">
+                    <%= image_tag(@user.image, class: "post-image z-depth-4") %>
+                  </div>
+                  <!-- END IMAGE FOR POST -->
+                  <!-- BEGIN POST CONTENT -->
+                  <div class="col s9">
+                    Title: <%= post.title %> <br>
+                    Desc: <%= post.description %> <br>
+                    Address of Post: <%= post.location.address %> <br>
+                    City of Post: <%= link_to "#{post.location.city}", location_path(post.location.id) %> <br>
+                    Time of Post: <%= post.created_at %> <br>
+                    <% if session[:user_id].nil? || session[:user_id] != @user.id %>
+                    <% else %>
+                      <%= link_to "Edit Post", edit_post_path(post.id), class: "btn" %>
+                  </div>
+                  <!-- END POST CONTENT -->
+                </div>
+                <hr>
+                <% end %>
+              <% end %>
+          <!-- END POST DATA -->
+      </div>
+    </div>

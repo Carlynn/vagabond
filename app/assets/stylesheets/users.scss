@@ -1,3 +1,37 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wht-cont {
+  background-color: white;
+}
+
+#bg {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  background-image: url('https://i.pinimg.com/736x/f2/10/17/f21017283bcd524470390bcd6ed82ecc--denim-on-denim-denim-vests.jpg');
+  -webkit-background-size: cover;
+}
+.circle {
+  background-color: white;
+  height: 100px;
+}
+.prof-image {
+  position: absolute;
+  top: 50vh;
+  left: 18%;
+  z-index: 1;
+}
+.prof-title {
+  color: #282828;
+}
+.prof-description {
+  padding-top: 40px;
+}
+.post-title {
+  text-align: center;
+}
+.post-image {
+  width: 100%;
+}
