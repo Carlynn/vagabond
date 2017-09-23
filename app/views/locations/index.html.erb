@@ -15,7 +15,7 @@
           <p><%= location.description %></p><br><br>
           <img src="<%= location.icon_image %>" style="width:100px"><br><br><br>
 
-        <%= link_to "DISCOVER #{location.city.upcase}", location_path(location.id), class: "btn-card" %>
+        <%= link_to "DISCOVER #{location.city.upcase}", location_path(location.slug), class: "btn-card" %>
         </div>
       </div>
     </div>

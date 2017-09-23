@@ -4,9 +4,8 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
   def show
-    @location = Location.friendly.find(params[:id])
-    # @location = Location.find params[:id]
+    @location = Location.friendly.find(params[:slug])
     @locationposts = @location.posts.order(created_at: :desc)
-
   end
+
 end
