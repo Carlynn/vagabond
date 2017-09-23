@@ -5,6 +5,7 @@
 <%= @location.city %>
 
 <% if session[:user_id].nil?  %>
+
 <% else %>
   <%= link_to "Add Post", new_post_path({:location_id => @location.city})%>
 <% end %>
