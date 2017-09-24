@@ -34,10 +34,17 @@ nav ul a {
   font-weight: bold;
   font-style: italic;
 }
+.post-title-color {
+  color: #6a0000;
+}
 .modal-content{
   color: black
 }
-
+.btn-post {
+  background-color: #282828 !important;
+  color: white !important;
+  width: 100%;
+}
 .flashmessage {
   border-style: solid;
   border-color: black;

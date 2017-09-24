@@ -1,19 +1,36 @@
-
-
-
-<h3>Title:<%= @post.title %></h3>
-<hr>
-<p>Location:<%= @post.location.city %></p>
-<hr>
-<p>Author:<%=  @post.user.first_name %> <%=  @post.user.last_name %></p>
-<hr>
-<p>Description:<%=  @post.description %></p>
-<br>
-
-
-<br><br>
-
-<% if session[:user_id].nil? || session[:user_id] != @post.user.id %>
-<% else %>
-  <%= link_to "Edit Post", edit_post_path(@post.id), class: "btn btn-default" %>
+<% content_for :head do %>
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
 <% end %>
+<div class="container">
+  <div class="row post-show-wht z-depth-5" >
+    <div class="col s12">
+      <h3 class="title post-title-color"><%= @post.title %></h3>
+      <hr>
+      <div class="row" >
+        <!-- BEGIN IMAGE FOR INDIVIDUAL POST -->
+        <div class="col s12 m3">
+          <%= image_tag(@post.image, class: "post-image z-depth-4") %><br>
+          <!-- BEGIN BUTTONS -->
+          <%= link_to "Back", :back , class: "btn btn-post" %>
+          <% if session[:user_id].nil? || session[:user_id] != @post.user.id %>
+          <% else %>
+            <%= link_to "Edit Post", edit_post_path(@post.id), class: "btn btn-post" %>
+            <% end %>
+          </div>
+          <!-- END BUTTONS -->
+          <!-- END IMAGE FOR INDIVIDUAL POST -->
+          <!-- BEGIN POST CONTENT -->
+          <div class="col s12 m9">
+            <b>Location: </b><%= @post.location.city %> <br>
+            <b>Author: </b><%= link_to "#{@post.user.first_name} #{@post.user.last_name}", user_path(@post.user.slug) %> <br>
+            <b>Description: </b><%= @post.description %> <br>
+          </div>
+          <!-- END POST CONTENT -->
+        </div>
+      </div>
+    </div>
+</div>

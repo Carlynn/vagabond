@@ -33,9 +33,10 @@
                   <br>
                   <div class="col s12 m3">
                     <%= image_tag(post.image, class: "post-image z-depth-4") %><br>
+                    <%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-post" %>
                     <% if session[:user_id].nil? || session[:user_id] != @user.id %>
                     <% else %>
-                      <%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-posts" %>
+                      <%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-post" %>
                     <% end %>
                     </div>
                     <!-- END IMAGE FOR POST -->
