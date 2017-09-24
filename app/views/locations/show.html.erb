@@ -33,8 +33,19 @@
         </ul>
       <% end %>
       <!-- END POST data -->
+
+      <!-- pagination -->
+      <%= paginate @locationposts %>
+      <div class="pagination_page_info">
+        <%= page_entries_info @locationposts %>
+      </div>
+
+
     </div>
   </div>
+
+
+
   <div class="parallax-container">
     <div class="parallax">
       <%= image_tag(@locationposts.sample.image) %>

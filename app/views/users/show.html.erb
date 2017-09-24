@@ -43,7 +43,7 @@
                     <div class="col s12 m9">
                       <b>Title: </b><%= post.title %> <br>
                       <b>Address: </b><%= post.location.address %> <br>
-                      <b>City: </b><%= link_to "#{post.location.city}", location_path(post.location.id) %> <br>
+                      <b>City: </b><%= link_to "#{post.location.city}", location_path(post.location.slug) %> <br>
                       <b>Posted at: </b><%= post.created_at %> <br>
                       <b>Experience: </b><%= post.description %> <br>
                     </div>
@@ -52,6 +52,15 @@
                 <hr>
               <% end %>
           <!-- END POST DATA -->
+
+          <!-- PAGINATION -->
+
+          <%= paginate @posts %>
+          <div class="pagination_page_info">
+            <%= page_entries_info @posts %>
+          </div>
+
+
 
           <div class="fixed-action-btn">
             <a class="btn-floating btn-large grey">
