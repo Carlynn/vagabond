@@ -16,7 +16,9 @@ class UsersController < ApplicationController
   def show
     # @user = User.find_by_id(params[:id])
     @user = User.friendly.find(params[:slug])
-    @posts = @user.posts
+    # @posts = @user.posts
+    # used for pagination
+    @posts = @user.posts.page(params[:page]).per(5)
   end
   def edit
     @user = User.friendly.find(params[:slug])

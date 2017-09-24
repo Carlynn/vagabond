@@ -61,6 +61,22 @@ nav ul a {
 .sign_in_div{
   padding: 0px;
 }
+// with fixed navbar ensuring that the side panel shows up on click on mobile
 #sidenav-overlay{
   z-index: 996
+}
+
+// PAGINATION CSS - https://stackoverflow.com/questions/26615157/pagination-kaminari-no-css-applyed
+.pagination a, .pagination span.current, .pagination span.gap {
+    // float: left;
+    // padding: 0 14px;
+    // line-height: 38px;
+    text-decoration: none;
+    color: black;
+    // border: 1px solid #DDD;
+    // border-left-width: 0;
+}
+
+.pagination_page_info {
+  padding-bottom: 2%
 }
