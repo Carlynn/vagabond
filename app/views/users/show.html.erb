@@ -41,7 +41,7 @@
                     <!-- END IMAGE FOR POST -->
                     <!-- BEGIN POST CONTENT -->
                     <div class="col s12 m9">
-                      <b>Title: </b><%= post.title %> <br>
+                      <b>Title: </b><span class="post-title-color"><%= post.title %></span><br>
                       <b>Address: </b><%= post.location.address %> <br>
                       <b>City: </b><%= link_to "#{post.location.city}", location_path(post.location.slug) %> <br>
                       <b>Posted at: </b><%= post.created_at %> <br>
@@ -61,13 +61,12 @@
             <%= page_entries_info @posts %>
           </div>
 
-
-
+<!-- floating button for adding a review -->
           <div class="fixed-action-btn">
-            <a class="btn-floating btn-large grey">
-              <i class="large material-icons">mode_edit</i>
-            </a>
-              <%= link_to " "%>
+            <%= link_to new_post_path(),class: "btn-floating btn-large black" do %>
+              <i class="large material-icons">add</i>
+            <% end %>
           </div>
+
       </div>
     </div>
