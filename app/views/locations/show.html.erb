@@ -25,9 +25,9 @@
           <%= link_to "Read More", post_path(post.id) %>
           <hr>
           <% else %>
-            <%= link_to "Show Post", post_path(post.id) %>
-            <%= link_to "Edit Post", edit_post_path(post.id) %>
-            <%= button_to 'Delete', {:controller => "posts", :action => 'show', :id => post.id}, data: {:confirm => "Are you sure you want to delete the #{post.title} post?"}, :method => :delete, class: 'btn delete-button' %>
+            <%= link_to "Read More", post_path(post.id) %><br>
+            <%= button_to "Edit Post", edit_post_path(post.id), class: 'btn btn-inline' %>
+            <%= button_to 'Delete', {:controller => "posts", :action => 'show', :id => post.id}, data: {:confirm => "Are you sure you want to delete the #{post.title} post?"}, :method => :delete, class: 'btn btn-2 delete-button' %>
             <hr>
           <% end %>
         </ul>
