@@ -10,11 +10,12 @@
       <% if session[:user_id].nil?  %>
       <% else %>
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large black">
-              <i class="large material-icons">add</i>
-            </a>
-              <%= link_to " ", new_post_path({:location_id => @location.city})%>
-          </div>
+          <%= link_to new_post_path({:location_id => @location.city}),class: "btn-floating btn-large black" do %>
+            <i class="large material-icons">add</i>
+          <% end %>
+        </div>
+
+
       <% end %>
       <% @locationposts.each do |post| %>
         <ul>

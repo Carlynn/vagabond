@@ -61,13 +61,12 @@
             <%= page_entries_info @posts %>
           </div>
 
-
-
+<!-- floating button for adding a review -->
           <div class="fixed-action-btn">
-            <a class="btn-floating btn-large grey">
-              <i class="large material-icons">mode_edit</i>
-            </a>
-              <%= link_to " "%>
+            <%= link_to new_post_path(),class: "btn-floating btn-large black" do %>
+              <i class="large material-icons">add</i>
+            <% end %>
           </div>
+
       </div>
     </div>
