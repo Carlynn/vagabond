@@ -50,7 +50,7 @@
                   <!-- BEGIN IMAGE FOR POST -->
                   <br>
                   <div class="col s12 m3">
-                    <% if post.image.nil?  %>
+                    <% if post.image.empty?  %>
                       <%= image_tag(asset_path('no_image.png'), class: "post-image z-depth-4") %>
                     <% else %>
                       <%= image_tag(post.image, class: "post-image z-depth-4") %>
