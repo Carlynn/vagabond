@@ -6,7 +6,7 @@
   Title: <%= f.text_field :title %>
 </div>
 <div>
-  Description: <%= f.text_field :description %>
+  Photo: <%= f.url_field :image %>
 </div>
 <div>
   <% if params[:location_id] == "St. Petersburg" %>
@@ -18,6 +18,9 @@
   <% else %>
   City:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
   <% end %>
+</div>
+<div>
+  Description: <%= f.text_field :description %>
 </div>
 <%= f.submit "Create Post", class: "btn" %>
 <% end %>
