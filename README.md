@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a application made to show all the must see attractions for Europe within the following destinations: Barcelona, London, Paris, and St.Petersburg.
 
-Things you may want to cover:
+The main functionality of this application is to help users create travel posts which consists of personal recommendations, along with reviews of things to do while in that designated city.
 
-* Ruby version
+## Technologies Used:
 
-* System dependencies
+* Ruby version: 2.4.0
 
-* Configuration
+* Materialize
 
-* Database creation
+* Rails version: 5.1.4
 
-* Database initialization
+* Friendly_id version: 5.2
 
-* How to run the test suite
+* HTML
 
-* Services (job queues, cache servers, search engines, etc.)
+* CSS
 
-* Deployment instructions
+* Javascript
 
-* ...
+* Photoshop
+
+* Illustrator
+
+* Kaminari (Pagination)
+
+
+##Heroku Link:
+
+* https://guarded-taiga-12222.herokuapp.com/
+
+##Created by:
+
+* Ray Choi
+
+* Carylnn Espinoza
+
+* Jimmy Cheng

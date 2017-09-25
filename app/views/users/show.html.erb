@@ -1,9 +1,13 @@
 <div id="bg" class="container-fluid" style="background-image: url(
-  <% current_back_ground_image = @user.posts.sample.image %>
-  <% if current_back_ground_image.nil? %>
+  <% if @user.posts.empty? %>
     <%= asset_path('europe_background_no_image.jpg') %>
-  <% else %>
-    <%= current_back_ground_image %>
+    <% else %>
+      <% current_back_ground_image = @user.posts.sample.image %>
+        <% if current_back_ground_image.empty? %>
+          <%= asset_path('europe_background_no_image.jpg') %>
+        <% else %>
+          <%= current_back_ground_image %>
+        <% end %>
   <% end %>
 );">
 
