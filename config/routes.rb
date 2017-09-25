@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root to: "locations#index"
 
   resources :users, param: :slug
+  # routes for editing password
+  get "/users/:slug/edit/password_update" => "users#password", as:"update_password_user"
+  patch "/users/:slug/edit/password_update" => "users#password"
+
   # route for log-in screen
   get "/login" => "sessions#new"
   # route for creating new session id

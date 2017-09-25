@@ -18,7 +18,12 @@
      <nav style="background-color: white; top: 0">
         <div class="nav-wrapper">
 
-          <img class="brand-logo" src="<%= asset_path("logo_travel_with_us.png") %>" style="height: 100%">
+          <!-- <img class="brand-logo" src="<%= asset_path("logo_travel_with_us.png") %>" style="height: 100%"> -->
+
+          <%= link_to root_path do %>
+            <%= image_tag(asset_path("logo_travel_with_us.png"), class:"brand-logo", style: "height: 100%") %>
+          <% end %>
+          <!-- https://mixandgo.com/blog/how-to-use-link_to-in-rails -->
             <!-- begin header -->
             <div class="brand-logo valign-wrapper hide-on-med-and-down" style="left: 38%">
               <!-- <div style="position: relative"> -->

@@ -1,11 +1,11 @@
 <div id="bg" class="container-fluid" style="background-image: url(
-<% if @user.posts.empty? %>
-  <%= asset_path('london_04.jpg') %>
-<% elsif @user.posts.sample.image.nil? %>
-  <%= asset_path('london_04.jpg') %>
-<% else %>
-  <%= @user.posts.sample.image %>
-<% end %>
+
+  <% current_back_ground_image = @user.posts.sample.image %>
+  <% if current_back_ground_image.nil? %>
+    <%= asset_path('europe_background_no_image.jpg') %>
+  <% else %>
+    <%= current_back_ground_image %>
+  <% end %>
 );">
 
   <!-- BEGIN Profile image and description -->
@@ -34,6 +34,7 @@
           <% if session[:user_id].nil? || session[:user_id] != @user.id %>
           <% else %>
             <%= link_to "Edit Profile", edit_user_path(@user.slug), class: "btn" %>
+
           <% end %>
           <div class="post-content">
             <h3 class="post-title title">POSTS</h3>

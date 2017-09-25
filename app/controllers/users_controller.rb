@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create, :user_params, :show]
-  before_action :check_owner, only: [:edit, :update]
+  before_action :check_owner, only: [:edit, :update, :password_update]
 
   def index
     redirect_to root_path
@@ -30,6 +30,11 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user)
     end
+  end
+
+  def password
+    render :password_update
+    @user = User.friendly.find(params[:slug])
   end
 
   private
