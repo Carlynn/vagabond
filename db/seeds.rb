@@ -49,8 +49,8 @@ location1 = Location.create({
   state: "Catalonia",
   postal_code: "08013",
   country: "Spain",
-  icon_image: "map_icon_spain.png",
-  background_image: "barcelona_01.jpg",
+  icon_image: "map-icon-spain.png",
+  background_image: "cover-barcelona.png",
   description: "Fall in love with Barcelona, where food, friends, family and fun rule all. Whether you're looking to follow royal footsteps in Madrid, lose yourself in Barcelona's sea breeze, or tame the brave bull in mythical Andalucía, adventure awaits around every corner.",
   })
 
@@ -60,9 +60,9 @@ location2 = Location.create({
   state: "UK",
   postal_code: "SW1A 0AA",
   country: "UK",
-  icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "london_01.jpg",
-  description: "A tireless innovator of art and culture, London is a city of ideas and the imagination. This city is a constant discovery: new restaurants and bars, outstanding museum extensions or refurbishments (and yet many remain free), once-derelict but now trendy neighbourhoods, and four distinct seasons that each bring unique pleasures.",
+  icon_image: "map-icon-london.png",
+  background_image: "cover-london.jpg",
+  description: "A tireless innovator of art and culture, London is a city of ideas and the imagination. This city is a constant discovery: new restaurants and bars, outstanding museums, once-derelict but now trendy neighbourhoods, and four distinct seasons that each bring unique pleasures.",
   })
 
 location3 = Location.create({
@@ -71,8 +71,8 @@ location3 = Location.create({
   state: " St. Petersburg ",
   postal_code: "194358",
   country: "Russia",
-  icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "st_petersburg_01.jpg",
+  icon_image: "map-icon-russia.png",
+  background_image: "cover-st-petersburg.jpg",
   description: " St. Petersburg is a planned city whose elegance is reminiscent of Europe's most alluring capitals. Little wonder it's the darling of fashion photographers and travel essayists today: built on more than a hundred islands in the Neva Delta linked by canals and arched bridges.",
 })
 
@@ -82,9 +82,9 @@ location4 = Location.create({
   state: "Paris",
   postal_code: "75007",
   country: "France",
-  icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
-  background_image: "Europe_01.jpg",
-  description: "Paris is one of the most beautiful cities on earth, a truth easily appreciated on a stroll that could yield one stunning vista after another, from the epic Eiffel Tower to the regal Jardin des Tuileries to the petite cafés bursting onto the sidewalks. Beyond the city’s visual appeal, the cultural riches of the French capital are unsurpassed. Whether you opt to explore the historic, fashion-conscious, bourgeois, or bohemian and arty sides of Paris, one thing is certain: the City of Light will always enthrall.",
+  icon_image: "map-icon-france.png",
+  background_image: "cover-paris.jpg",
+  description: "Paris one of the most beautiful cities on earth, a truth easily appreciated on a stroll that could yield one stunning vista after another, from the Eiffel Tower to the regal Jardin des Tuileries to the petite cafés bursting onto the sidewalks. The cultural riches of the French capital are unsurpassed.",
   })
 
   # Creation Posts
