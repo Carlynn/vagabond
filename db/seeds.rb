@@ -62,7 +62,7 @@ location2 = Location.create({
   country: "UK",
   icon_image: "map-icon-london.png",
   background_image: "cover-london.jpg",
-  description: "A tireless innovator of art and culture, London is a city of ideas and the imagination. This city is a constant discovery: new restaurants and bars, outstanding museums, once-derelict but now trendy neighbourhoods, and four distinct seasons that each bring unique pleasures.",
+  description: "A tireless innovator of art and culture, London is a city of ideas and the imagination. A constant discovery: new restaurants and bars, outstanding museums, once-derelict but now trendy neighbourhoods, and distinct seasons that each bring unique pleasures.",
   })
 
 location3 = Location.create({
@@ -73,7 +73,7 @@ location3 = Location.create({
   country: "Russia",
   icon_image: "map-icon-russia.png",
   background_image: "cover-st-petersburg.jpg",
-  description: " St. Petersburg is a planned city whose elegance is reminiscent of Europe's most alluring capitals. Little wonder it's the darling of fashion photographers and travel essayists today: built on more than a hundred islands in the Neva Delta linked by canals and arched bridges.",
+  description: "St. Petersburg a planned city whose elegance is reminiscent of Europe's most alluring capitals. Little wonder it's the darling of fashion photographers and travel essayists: built on more than a hundred islands in the Neva Delta linked by canals and arched bridges.",
 })
 
 location4 = Location.create({
@@ -84,7 +84,7 @@ location4 = Location.create({
   country: "France",
   icon_image: "map-icon-france.png",
   background_image: "cover-paris.jpg",
-  description: "Paris one of the most beautiful cities on earth, a truth easily appreciated on a stroll that could yield one stunning vista after another, from the Eiffel Tower to the regal Jardin des Tuileries to the petite cafés bursting onto the sidewalks. The cultural riches of the French capital are unsurpassed.",
+  description: "Paris one of the most beautiful cities on earth, a truth easily seen on a stroll that yields one stunning vista after another, from the Eiffel Tower to the regal Jardin des Tuileries to the petite cafés bursting onto the sidewalks. The cultural riches of the French capital are unsurpassed.",
   })
 
   # Creation Posts
