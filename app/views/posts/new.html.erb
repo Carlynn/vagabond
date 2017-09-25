@@ -7,6 +7,9 @@
   Description: <%= f.text_field :description %>
 </div>
 <div>
+  Image: <%= f.url_field :image %>
+</div>
+<div>
   <% if params[:location_id] == "St. Petersburg" %>
   Location:city:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
   <% elsif params[:location_id] == "Paris" %>

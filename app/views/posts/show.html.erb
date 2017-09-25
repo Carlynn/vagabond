@@ -13,7 +13,11 @@
       <div class="row" >
         <!-- BEGIN IMAGE FOR INDIVIDUAL POST -->
         <div class="col s12 m3">
+          <% if @post.image.nil? %>
+          <%= image_tag(asset_path('no_image.png'), class: "post-image z-depth-4") %><br>
+          <% else %>
           <%= image_tag(@post.image, class: "post-image z-depth-4") %><br>
+          <% end %>
           <!-- BEGIN BUTTONS -->
           <%= link_to "Back", :back , class: "btn btn-post" %>
           <% if session[:user_id].nil? || session[:user_id] != @post.user.id %>
