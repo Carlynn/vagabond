@@ -27,6 +27,7 @@
         <ul>
           <b>Title: </b><span class="post-title-color"><%= post.title %></span><br>
           <b>Author: </b><%= link_to "#{post.user.first_name} #{post.user.last_name}", user_path(post.user.slug) %><br>
+          <b>Post Date: </b><%= post.created_at.strftime("%B").to_s + " " + post.created_at.day.to_s + ", " + post.created_at.year.to_s %> <br>
           <b>Description: </b><%= post.description.slice(0, 210)+"..." %>
           <% if session[:user_id].nil? || session[:user_id] != post.user.id %>
           <%= link_to "Read More", post_path(post.id) %>

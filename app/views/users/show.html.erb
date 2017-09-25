@@ -1,5 +1,4 @@
 <div id="bg" class="container-fluid" style="background-image: url(
-
   <% current_back_ground_image = @user.posts.sample.image %>
   <% if current_back_ground_image.nil? %>
     <%= asset_path('europe_background_no_image.jpg') %>
@@ -56,6 +55,7 @@
                     <% if session[:user_id].nil? || session[:user_id] != @user.id %>
                     <% else %>
                       <%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-post" %>
+                      <%= button_to 'Delete', {:controller => "posts", :action => 'show', :id => post.id}, data: {:confirm => "Are you sure you want to delete the #{post.title} post?"}, :method => :delete, class: 'btn btn-width' %>
                     <% end %>
                     </div>
                     <!-- END IMAGE FOR POST -->
@@ -64,7 +64,7 @@
                       <b>Title: </b><span class="post-title-color"><%= post.title %></span><br>
                       <b>Address: </b><%= post.location.address %> <br>
                       <b>City: </b><%= link_to "#{post.location.city}", location_path(post.location.slug) %> <br>
-                      <b>Posted at: </b><%= post.created_at %> <br>
+                      <b>Post Date: </b><%= post.created_at.strftime("%B").to_s + " " + post.created_at.day.to_s + ", " + post.created_at.year.to_s %> <br>
                       <b>Experience: </b><%= post.description.slice(0, 210)+"..." %>
                       <%= link_to "Read More", post_path(post.id) %><br>
                     </div>
