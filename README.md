@@ -1,11 +1,12 @@
-# README
+# <img src="/assets/images/logo_travel_with_us.png width="60"> PROJECT 2: Travel With Us!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a application made to show all the must see attractions for Europe within the following destinations: Barcelona, London, Paris, and St.Petersburg.
 
-Things you may want to cover:
+The main functionality of this application is to help users create travel posts which consists of personal recommendations, along with reviews of things to do while in that designated city.
 
-* Ruby version
+## Technologies Used:
+
+* Ruby version: 2.4.0
 
 * System dependencies
 
