@@ -1,4 +1,4 @@
-# <img src="http://www.travelinindo.com/uploads/3/1/0/3/31037499/738308.png?405 width="60"> PROJECT 2: Travel With Us!
+# <img src="http://www.travelinindo.com/uploads/3/1/0/3/31037499/738308.png?405" width="60"> PROJECT 2: Travel With Us!
 
 This is a application made to show all the must see attractions for Europe within the following destinations: Barcelona, London, Paris, and St.Petersburg.
 
