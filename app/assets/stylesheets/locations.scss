@@ -7,6 +7,9 @@
   padding: 0 15%;
   margin-bottom: 40px;
 }
+.text-shadow {
+  text-shadow: 1px 1px 5px black;
+}
 .card {
   background-image: no-repeat;
   background-size: 100% 100%;
@@ -40,4 +43,7 @@
 }
 .btn-2 {
   margin: 0.3em 0.3em !important;
+}
+.title-height {
+  font-size: 18px;
 }
