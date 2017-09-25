@@ -1,4 +1,6 @@
-<h1>Create a post</h1>
+<div class="container">
+  <div class="row" style="margin-top: 0.75rem">
+<h3 class="post-title-color">Create a post</h3>
 <%= form_for @post do |f| %>
 <div>
   Title: <%= f.text_field :title %>
@@ -8,14 +10,16 @@
 </div>
 <div>
   <% if params[:location_id] == "St. Petersburg" %>
-  Location:city:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
+  City:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
   <% elsif params[:location_id] == "Paris" %>
-  Location:city:<%= select(:location, :city, [['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg']]) %>
+  City:<%= select(:location, :city, [['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg']]) %>
   <% elsif params[:location_id] == "London" %>
-  Location:city:<%= select(:location, :city, [['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris']]) %>
+  City:<%= select(:location, :city, [['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris']]) %>
   <% else %>
-  Location:city:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
+  City:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
   <% end %>
 </div>
 <%= f.submit "Create Post", class: "btn" %>
 <% end %>
+</div>
+</div>

@@ -1,23 +1,38 @@
-<h1>Edit Post</h1>
 <!--We removed turbolinks  -->
-<%= form_for @post, method: "patch" do |f| %>
-<div>
-  <%= f.text_field :title %>
-</div>
-<div>
-  <%= f.text_field :description %>
-</div>
-<div>
-  <% if @post.location.city.to_s == "St. Petersburg" %>
-  Location:city:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
-  <% elsif @post.location.city.to_s == "Paris" %>
-  Location:city:<%= select(:location, :city, [['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg']]) %>
-  <% elsif @post.location.city.to_s == "London" %>
-  Location:city:<%= select(:location, :city, [['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris']]) %>
-  <% else %>
-  Location:city:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
-  <% end %>
-</div>
-<%= f.submit "Save Changes", class: "btn" %>
+<div class="container">
+  <div class="row" style="margin-top: 0.75rem">
 
-<% end %>
+    <h3 class="post-title-color">Edit Post</h3>
+    <%= form_for @post, method: "patch" do |f| %>
+    <div>
+      <%= f.label :title%>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <% if @post.location.city.to_s == "St. Petersburg" %>
+      <%= f.label :city%>
+      <%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
+      <% elsif @post.location.city.to_s == "Paris" %>
+      <%= f.label :city%>
+      <%= select(:location, :city, [['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg']]) %>
+      <% elsif @post.location.city.to_s == "London" %>
+      <%= f.label :city%>
+      <%= select(:location, :city, [['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris']]) %>
+      <% else %>
+      <%= f.label :city%>
+      <%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
+      <% end %>
+    </div>
+    <div>
+      <%= f.label :image%>
+      <%= f.url_field :image %>
+    </div>
+    <div>
+      <%= f.label :description%>
+      <%= f.text_field :description %>
+    </div>
+    <%= f.submit "Save Changes", class: "btn" %>
+
+    <% end %>
+  </div>
+</div>

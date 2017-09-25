@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row" style="margin-top: 0.75rem">
   <div class="push-s2">
-    <h3 style="display: inline">Hello </h3><h3 class="post-title-color" style="display: inline"><%= @user.first_name %></h3>
+    <h3>Hello <span class="post-title-color"><%= @user.first_name %></span></h3>
     <p>Keep us up to date with your current information</p>
     <%= form_for @user do |f| %>
     <div>
