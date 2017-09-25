@@ -1,8 +1,22 @@
-<div id="bg" class="container-fluid" style="background-image: url('<%= @user.posts.sample.image %>');">
+<div id="bg" class="container-fluid" style="background-image: url(
+<% if @user.posts.empty? %>
+  <%= asset_path('london_04.jpg') %>
+<% elsif @user.posts.sample.image.nil? %>
+  <%= asset_path('london_04.jpg') %>
+<% else %>
+  <%= @user.posts.sample.image %>
+<% end %>
+);">
+
   <!-- BEGIN Profile image and description -->
   <!-- BEGIN Profile IMAGE -->
   <div class="row prof-image">
+
+    <% if @user.image.empty? %>
+      <%= image_tag(asset_path('default_user_no_image.png'), class: "circle") %>
+    <% else %>
       <%= image_tag(@user.image, class: "circle") %>
+    <% end %>
   </div>
   <!-- END Profile IMAGE -->
   <!-- BEG COTNAINER FOR CONTENT -->
@@ -32,7 +46,12 @@
                   <!-- BEGIN IMAGE FOR POST -->
                   <br>
                   <div class="col s12 m3">
-                    <%= image_tag(post.image, class: "post-image z-depth-4") %><br>
+                    <% if post.image.nil?  %>
+                      <%= image_tag(asset_path('no_image.png'), class: "post-image z-depth-4") %>
+                    <% else %>
+                      <%= image_tag(post.image, class: "post-image z-depth-4") %>
+                    <% end %>
+                    <br>
                     <% if session[:user_id].nil? || session[:user_id] != @user.id %>
                     <% else %>
                       <%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-post" %>

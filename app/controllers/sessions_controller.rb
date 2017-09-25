@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.new
+    if current_user.nil?
+      @user = User.new
+    else
+      redirect_to user_path(current_user)
+    end
+
   end
   def create
     @user = User.confirm(login_params)

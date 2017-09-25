@@ -1,7 +1,12 @@
 <div class="parallax-container">
     <div class="parallax">
-      <%= image_tag(@locationposts.sample.image, class: 'parallax-img') %>
+      <% if @locationposts.sample.image.empty? %>
+        <%= image_tag(@location.background_image, class: 'parallax-img') %>
+      <% else %>
+        <%= image_tag(@locationposts.sample.image, class: 'parallax-img') %>
+      <% end %>
       </div>
+
   </div>
   <div class="section white">
     <div class="row container">
@@ -49,6 +54,10 @@
 
   <div class="parallax-container">
     <div class="parallax">
-      <%= image_tag(@locationposts.sample.image) %>
+      <% if @locationposts.sample.image.nil? %>
+        <%= image_tag(@location.background_image, class: 'parallax-img') %>
+      <% else %>
+        <%= image_tag(@locationposts.sample.image, class: 'parallax-img') %>
+      <% end %>
     </div>
   </div>
