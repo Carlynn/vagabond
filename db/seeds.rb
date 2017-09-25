@@ -183,9 +183,12 @@ location4 = Location.create({
     {
       user_id: user_2.id,
       location_id: location3.id,
-      title: "Vladimir Nabokov Museum",
-      description: "The Vladimir Nabokov Museum occupies the ground floor of the building where the writer himself lived for many years. Among its authentic historical interiors are a dining room, a family room, and a library. The place is magical, and its atmosphere transports you straight back to the era of Nabokov's life.",
-      image: "http://www.theculturemap.com/wp-content/uploads/2014/11/Nabokov-museum-butterfly.jpg"
+      title: "Church of the Savior on Blood",
+      description: "This church is one of the most striking yet elegant pieces of architecture I've ever seen.
+      Located by the side of the river, the building stands out for its unique design (as you can see in any of the pictures) but also because of its colors and textures. If you are visiting it, I recommend you walk on one of the streets following the river towards the church. That way you'll enjoy the river and all the little shops, artisans and musicians along the way.
+      You must not miss this place if you are in St Petersburg.
+      ",
+      image: "http://wetu.com/Resources/82353/anna_01.jpg"
     },
     {
       user_id: user_3.id,
