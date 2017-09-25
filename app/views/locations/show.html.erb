@@ -1,6 +1,6 @@
 <div class="parallax-container">
     <div class="parallax">
-      <%= image_tag(@locationposts.sample.image) %>
+      <%= image_tag(@locationposts.sample.image, class: 'parallax-img') %>
       </div>
   </div>
   <div class="section white">
@@ -19,7 +19,7 @@
       <% end %>
       <% @locationposts.each do |post| %>
         <ul>
-          <span><b style="display: inline">Title: </b><p class="post-title-color" style="display: inline"><%= post.title%></p><br></span>
+          <b>Title: </b><span class="post-title-color"><%= post.title %></span><br>
           <b>Author: </b><%= link_to "#{post.user.first_name} #{post.user.last_name}", user_path(post.user.slug) %><br>
           <b>Description: </b><%= post.description.slice(0, 210)+"..." %>
           <% if session[:user_id].nil? || session[:user_id] != post.user.id %>

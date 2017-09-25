@@ -1,4 +1,4 @@
-<div class="content" style="position: relative; top: 100px">
+<div class="content" style="position: relative; top: 20px">
   <div class="header">
     <p>Traveling abroad in Europe? Take a tour and discover what there is to offer from travelers just like yourself. Here you will have the ability to see Europe as they saw it through their eyes. Take a peak at all the reviews and enjoy. We can't wait to hear from you next!</p>
   </div>
@@ -13,7 +13,7 @@
         <div class="card-content white-text">
           <span class="title"><h3><%= location.city %></h3></span><br>
           <p><%= location.description %></p><br><br>
-          <img src="<%= location.icon_image %>" style="width:100px"><br><br><br>
+          <img src="<%= asset_path(location.icon_image) %>" style="width:125px"><br><br><br>
 
         <%= link_to "DISCOVER #{location.city.upcase}", location_path(location.slug), class: "btn-card" %>
         </div>
