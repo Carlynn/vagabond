@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_login, except: [:show]
-  before_action :check_owner, only: [:edit, :update]
+  before_action :check_owner, only: [:edit, :update, :destroy]
 
   def index
     redirect_to root_path
