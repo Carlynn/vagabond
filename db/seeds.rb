@@ -49,7 +49,7 @@ location1 = Location.create({
   state: "Catalonia",
   postal_code: "08013",
   country: "Spain",
-  icon_image: "http://www.madeforspainandportugal.com/wp-content/uploads/2016/01/map-spain-white.svg",
+  icon_image: "map_icon_spain.png",
   background_image: "barcelona_01.jpg",
   description: "Fall in love with Barcelona, where food, friends, family and fun rule all. Whether you're looking to follow royal footsteps in Madrid, lose yourself in Barcelona's sea breeze, or tame the brave bull in mythical Andalucía, adventure awaits around every corner.",
   })

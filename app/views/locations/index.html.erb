@@ -13,8 +13,7 @@
         <div class="card-content white-text">
           <span class="title"><h3><%= location.city %></h3></span><br>
           <p><%= location.description %></p><br><br>
-          <img src="<%= location.icon_image %>" style="width:100px"><br><br><br>
-
+          <img src="<%= asset_path(location.icon_image) %>" style="width:100px"><br><br><br>
         <%= link_to "DISCOVER #{location.city.upcase}", location_path(location.slug), class: "btn-card" %>
         </div>
       </div>
