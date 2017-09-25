@@ -1,40 +1,40 @@
 <div class="container">
-<div class="row" style="margin-top: 0.75rem">
-  <div class="push-s2">
-    <h3>Hello <span class="post-title-color"><%= @user.first_name %></span></h3>
-    <p>Keep us up to date with your current information</p>
-    <%= form_for @user do |f| %>
-    <div>
-      <%= f.label :first_name%>
-      <%= f.text_field :first_name %>
-    </div>
-    <div>
-      <%= f.label :last_name%>
-      <%= f.text_field :last_name %>
-    </div>
-    <div>
-      <%= f.label :city%>
-      <%= f.text_field :city %>
-    </div>
-    <div>
-      <%= f.label :state%>
-      <%= f.text_field :state %>
-    </div>
-    <div>
-      <%= f.label :country%>
-      <%= f.text_field :country %>
-    </div>
-    <div>
-      <%= f.label :image%>
-      <%= f.url_field :image %>
-    </div>
-    <div>
-      <%= f.label :email%>
-      <%= f.email_field :email %>
-    </div>
-    <%= f.submit "Save Changes", class: "btn" %>
-    <% end %>
+  <div class="row" style="margin-top: 0.75rem">
+      <h3>Hello <span class="post-title-color"><%= @user.first_name %></span></h3>
+      <p>Keep us up to date with your current information</p>
+      <%= form_for @user do |f| %>
+      <div>
+        <%= f.label :first_name%>
+        <%= f.text_field :first_name %>
+      </div>
+      <div>
+        <%= f.label :last_name%>
+        <%= f.text_field :last_name %>
+      </div>
+      <div>
+        <%= f.label :city%>
+        <%= f.text_field :city %>
+      </div>
+      <div>
+        <%= f.label :state%>
+        <%= f.text_field :state %>
+      </div>
+      <div>
+        <%= f.label :country%>
+        <%= f.text_field :country %>
+      </div>
+      <div>
+        <%= f.label :image%>
+        <%= f.url_field :image %>
+      </div>
+      <div>
+        <%= f.label :email%>
+        <%= f.email_field :email %>
+      </div>
+      <div class="btn-inline">
+      <%= f.submit "Save Changes", class: "btn" %>
+      <% end %>
+     </div>
+     <%= link_to "Change Password", update_password_user_path(@user.slug), class: "btn btn-red right" %>
    </div>
- </div>
-<%= link_to "Change Password", update_password_user_path(@user.slug), class: "btn" %>
- </div>
+</div>

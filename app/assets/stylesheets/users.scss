@@ -39,10 +39,14 @@
   color: white !important;
   margin: 0.3em 0;
 }
-.btn-inline {
-  float: left;
-  margin: 0 0.3em;
-}
 .btn-2 {
   margin: 0 0.3em;
+}
+.div-inline {
+  display:inline-block;
+}
+.btn-red {
+  background-color: #6a0000 !important;
+  color: white !important;
+  margin: 0.3em 0;
 }
