@@ -1,6 +1,6 @@
 <div class="parallax-container">
     <div class="parallax">
-      <% if @locationposts.sample.image.nil? %>
+      <% if @locationposts.sample.image.empty? %>
         <%= image_tag(@location.background_image) %>
       <% else %>
         <%= image_tag(@locationposts.sample.image) %>
