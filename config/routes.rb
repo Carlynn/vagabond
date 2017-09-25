@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :users, param: :slug
   # routes for editing password
-  get "/users/:slug/edit/password_update" => "users#password", as:"update_password_user"
-  patch "/users/:slug/edit/password_update" => "users#password"
+  get "/users/:slug/edit/password_update" => "users#password", as:"password_user"
+  patch "/users/:slug/edit/password_update" => "users#password_update"
 
   # route for log-in screen
   get "/login" => "sessions#new"

@@ -1,5 +1,4 @@
 <div id="bg" class="container-fluid" style="background-image: url(
-
   <% current_back_ground_image = @user.posts.sample.image %>
   <% if current_back_ground_image.nil? %>
     <%= asset_path('europe_background_no_image.jpg') %>
