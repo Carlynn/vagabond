@@ -22,4 +22,5 @@ $(document).ready(function() {
     $('.tooltipped').tooltip({delay: 50});
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
+    $(".dropdown-button").dropdown();
 });

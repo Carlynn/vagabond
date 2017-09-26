@@ -59,8 +59,6 @@ class PostsController < ApplicationController
 
   def check_owner
     @post = Post.find_by_id(params[:id])
-  # both are the same thing current_user.id == params[:id] and session[:id] === params[:id] => only if these are true then it allows the method to work for that SPECIFIC PARAMETER IN THE URL
-  # if the person that is logged is not the same as the persons data we are looking at ... flash a message or redirect_to their own page
     if session[:user_id].to_s != @post.user.id.to_s
       redirect_to user_path(current_user)
     end

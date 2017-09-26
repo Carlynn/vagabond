@@ -13,9 +13,7 @@
         <div class="card-content white-text">
           <span class="title text-shadow"><h3><%= location.city %></h3></span><br>
           <p><span class="text-shadow"><%= location.description %></span></p><br><br>
-
           <img src="<%= asset_path(location.icon_image) %>" style="width:125px"><br><br><br>
-
         <%= link_to "DISCOVER #{location.city.upcase}", location_path(location.slug), class: "btn-card text-shadow btn-hover" %>
         </div>
       </div>

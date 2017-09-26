@@ -17,13 +17,9 @@
 
      <nav style="background-color: white; top: 0">
         <div class="nav-wrapper">
-
-          <!-- <img class="brand-logo" src="<%= asset_path("logo_travel_with_us.png") %>" style="height: 100%"> -->
-
           <%= link_to root_path do %>
             <%= image_tag(asset_path("logo_travel_with_us.png"), class:"brand-logo", style: "height: 100%") %>
           <% end %>
-          <!-- https://mixandgo.com/blog/how-to-use-link_to-in-rails -->
             <!-- begin header -->
             <div class="brand-logo valign-wrapper hide-on-med-and-down" style="left: 38%">
               <!-- <div style="position: relative"> -->
@@ -33,7 +29,7 @@
             <!-- end header -->
           <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons" style="color: black">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><%=link_to "HOME", root_path %></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">EXPLORE<i class="material-icons right">arrow_drop_down</i></a></li>
             <% if current_user %>
             <li><%=link_to "PROFILE", user_path(current_user) %></li>
             <li><%=link_to "LOG OUT", logout_path %></li>
@@ -55,12 +51,14 @@
               <li><%=link_to "SIGN UP", new_user_path %></li>
               <li><%=link_to "LOGIN", login_path %></li>
             <% end %>
+              <li><%=link_to "BARCELONA", location_path("barcelona-spain") %></li>
+              <li><%=link_to "LONDON", location_path("london-uk") %></li>
+              <li><%=link_to "PARIS", location_path("paris-france") %></li>
+              <li><%=link_to "ST. PETERSBURG", location_path("st-petersburg-russia") %></li>
           </ul>
         </div>
       </nav>
     </div>
-
-
       <!-- navbar end -->
 
       <!-- Modal Trigger -->
@@ -94,17 +92,20 @@
       <%= stylesheet_link_tag %>
       <%= yield(:head) %>
       <!-- END Post show Page -->
-
-      <!-- <div class="row"> -->
         <div class="col s8 push-s2">
           <% flash.each do |name, msg| %>
            <div id='toast-container'>
              <%= javascript_tag "Materialize.toast('#{msg}', 4000)" %>
            </div>
-           <!-- <div class="flashmessage <%= name.capitalize %>"> <%= msg %></div> -->
           <% end %>
         </div>
-      <!-- </div> -->
+
+<ul id="dropdown1" class="dropdown-content" style="margin-top: 64px">
+  <li><%=link_to "Barcelona", location_path("barcelona-spain") %></li>
+  <li><%=link_to "London", location_path("london-uk") %></li>
+  <li><%=link_to "Paris", location_path("paris-france") %></li>
+  <li><%=link_to "St. Petersburg", location_path("st-petersburg-russia") %></li>
+</ul>
       <%= yield %>
   </body>
 </html>
