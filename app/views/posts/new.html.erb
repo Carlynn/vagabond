@@ -1,28 +1,28 @@
 <div class="container">
   <div class="row" style="margin-top: 0.75rem">
-<h3 class="post-title-color">Create a post</h3>
-<%= form_for @post do |f| %>
-<div>
-  Title: <%= f.text_field :title %>
-</div>
-<div>
-  Photo: <%= f.url_field :image %>
-</div>
-<div>
-  <% if params[:location_id] == "St. Petersburg" %>
-  City:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
-  <% elsif params[:location_id] == "Paris" %>
-  City:<%= select(:location, :city, [['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg']]) %>
-  <% elsif params[:location_id] == "London" %>
-  City:<%= select(:location, :city, [['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris']]) %>
-  <% else %>
-  City:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
-  <% end %>
-</div>
-<div>
-  Description: <%= f.text_field :description %>
-</div>
-<%= f.submit "Create Post", class: "btn" %>
-<% end %>
-</div>
+    <h3 class="post-title-color">Create a post</h3>
+    <%= form_for @post do |f| %>
+    <div>
+      Title: <%= f.text_field :title %>
+    </div>
+    <div>
+      Photo: <%= f.url_field :image %>
+    </div>
+    <div>
+      <% if params[:location_id] == "St. Petersburg" %>
+      City:<%= select(:location, :city, [['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona']]) %>
+      <% elsif params[:location_id] == "Paris" %>
+      City:<%= select(:location, :city, [['Paris', 'Paris'], ['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg']]) %>
+      <% elsif params[:location_id] == "London" %>
+      City:<%= select(:location, :city, [['London', 'London'], ['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris']]) %>
+      <% else %>
+      City:<%= select(:location, :city, [['Barcelona', 'Barcelona'], ['St. Petersburg', 'St. Petersburg'], ['Paris', 'Paris'], ['London', 'London']]) %>
+      <% end %>
+    </div>
+    <div>
+      Description: <%= f.text_field :description %>
+    </div>
+    <%= f.submit "Create Post", class: "btn" %>
+    <% end %>
+  </div>
 </div>
