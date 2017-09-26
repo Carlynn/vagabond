@@ -13,8 +13,6 @@ class SessionsController < ApplicationController
       login(@user)
       flash[:notice] = "Succesfully logged in!"
       redirect_back(fallback_location: user_path(@user))
-      # redirect_to :back
-      # redirect_to user_path(@user)
     else
       flash[:error] = "Login incorrect. Please try again"
       redirect_to login_path
@@ -25,7 +23,6 @@ class SessionsController < ApplicationController
     flash[:notice] = "Succesfully logged out!"
     redirect_to root_path
   end
-
 
   private
   def login_params
